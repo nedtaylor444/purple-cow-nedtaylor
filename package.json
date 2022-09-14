@@ -1,0 +1,13 @@
+{
+	"name": "purple_cow_nedtaylor",
+	"version": "1.0.0",
+	"description": "",
+	"author": "Ned Taylor",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"express": "^4.16.1"
+	}
+}
