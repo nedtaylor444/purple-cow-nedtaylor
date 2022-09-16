@@ -8,8 +8,12 @@ let router = express.Router();
 router
 	.route('/items')
 	.get(items.getAllItems)
-	.put(items.addItems)
+	.post(items.addItems)
 	.delete(items.clearAllItems);
+
+router
+	.route('/items/:id')
+	.get(items.getItemById);
 
 router.param('id', items.getById);
 
