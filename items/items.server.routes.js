@@ -15,6 +15,10 @@ router
 	.route('/items/:id')
 	.get(items.getItemById);
 
+router
+	.route('/items/:updateId')
+	.post(items.updateItemById);
+
 router.param('id', items.getById);
 
 module.exports = router;

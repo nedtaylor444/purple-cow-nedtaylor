@@ -1,9 +1,5 @@
 let items = {};
 
-/**
- * @param {*} req
- * @param {*} res
- */
 module.exports.getAllItems = (req, res) => {
 	try {
 		console.log(items);
@@ -21,10 +17,14 @@ module.exports.getItemById = (req, res) => {
 	}
 };
 
-/**
- * @param {*} req
- * @param {*} res
- */
+module.exports.updateItemById = (req, res) => {
+	try {
+		items[req.params.updateId] = req.body.name;
+		res.status(200).json({"updated": true, name: items[req.params.updateId]});
+	} catch (err) {
+	}
+};
+
  module.exports.addItems = (req, res) => {
 	try {
 		const itemsToAdd = req.body.items;
@@ -37,10 +37,6 @@ module.exports.getItemById = (req, res) => {
 	}
 };
 
-/**
- * @param {*} req
- * @param {*} res
- */
  module.exports.clearAllItems = (req, res) => {
 	try {
 		items = [];
